@@ -85,6 +85,22 @@ void Sorter::selection(int* array, int length){
   cout << " ms" << endl;
 }
 
+void Sorter::insertion(int* array, int length){
+  //starting clock
+  auto start = chrono::high_resolution_clock::now();
+
+
+
+
+  //stopping clock
+  auto stop = chrono::high_resolution_clock::now();
+  auto duration = chrono::duration_cast<chrono::microseconds>(stop - start);
+
+  //outputting time
+  cout << "Insertion Sorted " << length << " elements in ";
+  cout << duration.count();
+  cout << " ms" << endl;
+}
 
 void Sorter::outputArray(int * array, int length){
 
