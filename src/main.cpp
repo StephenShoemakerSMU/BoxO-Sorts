@@ -6,18 +6,23 @@
 using namespace std;
 
 int main(){
-  int length = 10;
+  //int length = 10;
   int range = 20;
-  int * array = new int[length];
+//  int * selectionArray = new int[length];
+//  int * bubbleArray = new int[length];
   srand(std::time(nullptr));
 
-  for(length = 100; length  < 10000; length *=1.1){
-    int * array = new int[length];
+  for(int length = 100; length  < 10000; length *=1.1){
+    int * selectionArray = new int[length];
+    int * bubbleArray = new int[length];
     for(int index = 0; index < length; index++){
-        *(array+index) = 1 + rand()%range;
+        int value = 1 + rand()%range;
+        *(selectionArray+index) = value;
+        *(bubbleArray+index) = value;
     }
 
-    Sorter::bubble(array,length);
+    Sorter::selection(selectionArray,length);
+    Sorter::bubble(bubbleArray,length);
   }
 
 }

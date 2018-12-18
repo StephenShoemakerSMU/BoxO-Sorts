@@ -14,6 +14,7 @@ using namespace std;
 class Sorter{
   public:
     static void bubble(int * , int);
+    static void selection(int*, int);
   private:
     static void outputArray(int *, int);
 };
