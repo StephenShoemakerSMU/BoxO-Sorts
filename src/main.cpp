@@ -6,15 +6,18 @@
 using namespace std;
 
 int main(){
-  int length = 20;
+  int length = 10;
   int range = 20;
-  int * array = &(0);
+  int * array = new int[length];
   srand(std::time(nullptr));
 
-  for(int index = 0; index < length; index++){
-      *(array+index) = 1 + rand()%range;
-  }
+  for(length = 100; length  < 10000; length *=1.1){
+    int * array = new int[length];
+    for(int index = 0; index < length; index++){
+        *(array+index) = 1 + rand()%range;
+    }
 
-  Sorter.bubble(array,length);
+    Sorter::bubble(array,length);
+  }
 
 }

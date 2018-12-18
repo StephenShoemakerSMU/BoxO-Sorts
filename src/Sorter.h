@@ -7,16 +7,15 @@
 
 #ifndef SHOESORT
 #define SHOESORT
-
 #include <iostream>
 
 using namespace std;
 
 class Sorter{
   public:
-    static int* bubble(*int, int);
+    static void bubble(int * , int);
   private:
-    static void outputArray(*int, int);
+    static void outputArray(int *, int);
 };
 
 
