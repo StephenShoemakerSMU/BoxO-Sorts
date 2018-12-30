@@ -87,22 +87,23 @@ void Sorter::selection(int* array, int length){
 
 void Sorter::insertion(int* array, int length){
   //starting clock
-  outputArray(array, length);
+  //outputArray(array, length);
   auto start = chrono::high_resolution_clock::now();
 
 
   //Placing every index into the sorted array
   for(int currSortingIndex = 0; currSortingIndex < length + 1; currSortingIndex++){
-    int interiorArrayIndex = 0;
-    //iterating interiorArrayIndex until the interior
-    for( /*doing it above*/; *(array + interiorArrayIndex) < *(array + currSortingIndex); interiorArrayIndex++){}
+    int valueBeingSorted = currSortingIndex;
 
-    int temp = *(array + currSortingIndex);
-    for(; interiorArrayIndex < length; interiorArrayIndex++){
-      *(array+currSortingIndex) = *(array+interiorArrayIndex);
-      *(array+interiorArrayIndex) = temp;
-      temp = *(array +  currSortingIndex);
+    while(valueBeingSorted > 0 && *(array + valueBeingSorted) < *(array + valueBeingSorted - 1)){
+      int temp = *(array+valueBeingSorted);
+      *(array+ valueBeingSorted) = *(array + valueBeingSorted - 1);
+      *(array + valueBeingSorted - 1) = temp;
+
+      valueBeingSorted--;
+
     }
+
   }
 
 
@@ -110,8 +111,8 @@ void Sorter::insertion(int* array, int length){
   //stopping clock
   auto stop = chrono::high_resolution_clock::now();
   auto duration = chrono::duration_cast<chrono::microseconds>(stop - start);
-
-  outputArray(array,length);
+  checkArray(array, length);
+  //1outputArray(array,length);
   //outputting time
   cout << "Insertion Sorted " << length << " elements in ";
   cout << duration.count();
@@ -125,4 +126,18 @@ void Sorter::outputArray(int * array, int length){
     cout << ", " << *(array+index);
   }
   cout << "]" << endl;
+}
+
+
+void  Sorter::checkArray(int* array, int length){
+  bool sorted = true;
+    for(int index = 0; index < length-1; index++){
+      if(*(array+index) > *(array+index+1)){
+        sorted = false;
+      }
+    }
+    if(!sorted){
+      outputArray(array, length);
+      cout << "NOT SORTED";
+    }
 }

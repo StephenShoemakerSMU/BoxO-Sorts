@@ -18,6 +18,7 @@ class Sorter{
     static void insertion(int*, int);
   private:
     static void outputArray(int *, int);
+    static void checkArray(int *, int);
 };
 
 
