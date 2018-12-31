@@ -8,7 +8,7 @@
 #ifndef SHOESORT
 #define SHOESORT
 #include <iostream>
-
+#include <chrono>
 using namespace std;
 
 class Sorter{
@@ -16,6 +16,9 @@ class Sorter{
     static void bubble(int * , int);
     static void selection(int*, int);
     static void insertion(int*, int);
+    //static auto bubbleTime(int*, int);
+    //static auto selectionTime(int*, int);
+    //static auto insertionTime(int*, int);
   private:
     static void outputArray(int *, int);
     static void checkArray(int *, int);

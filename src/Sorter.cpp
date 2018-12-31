@@ -12,7 +12,7 @@ void Sorter::bubble(int * array, int length){
   //outputArray(array,length);
 
   //starting clock
-  auto start = chrono::high_resolution_clock::now();
+  //auto start = chrono::high_resolution_clock::now();
 
   //outer loop that puts the highest value at the end of the array
   for(int currentEnd = length; currentEnd > 0; currentEnd--){
@@ -34,16 +34,18 @@ void Sorter::bubble(int * array, int length){
       }
   }
 
-
+  /*
   //stopping clock
   auto stop = chrono::high_resolution_clock::now();
   auto duration = chrono::duration_cast<chrono::microseconds>(stop - start);
 
+  checkArray(array, length);
 
   //outputting time
   cout << "Bubble Sorted " << length << " elements in ";
   cout << duration.count();
   cout << " ms" << endl;
+  */
 
 }
 
@@ -52,7 +54,7 @@ void Sorter::selection(int* array, int length){
   //outputArray(array,length);
 
   //starting clock
-  auto start = chrono::high_resolution_clock::now();
+  //auto start = chrono::high_resolution_clock::now();
 
   //new array
 
@@ -74,21 +76,24 @@ void Sorter::selection(int* array, int length){
   }
 
 
-
+  /*
   //stopping clock
   auto stop = chrono::high_resolution_clock::now();
   auto duration = chrono::duration_cast<chrono::microseconds>(stop - start);
 
+  checkArray(array, length);
   //outputting time
   cout << "Selection Sorted " << length << " elements in ";
   cout << duration.count();
   cout << " ms" << endl;
+  */
+
 }
 
 void Sorter::insertion(int* array, int length){
   //starting clock
   //outputArray(array, length);
-  auto start = chrono::high_resolution_clock::now();
+  //auto start = chrono::high_resolution_clock::now();
 
 
   //Placing every index into the sorted array
@@ -107,7 +112,7 @@ void Sorter::insertion(int* array, int length){
   }
 
 
-
+  /*
   //stopping clock
   auto stop = chrono::high_resolution_clock::now();
   auto duration = chrono::duration_cast<chrono::microseconds>(stop - start);
@@ -117,8 +122,69 @@ void Sorter::insertion(int* array, int length){
   cout << "Insertion Sorted " << length << " elements in ";
   cout << duration.count();
   cout << " ms" << endl;
+  */
+}
+/*
+auto Sorter::bubbleTime(int* array, int length){
+
+    auto start = chrono::high_resolution_clock::now();
+
+    bubble(array, length);
+
+    auto stop = chrono::high_resolution_clock::now();
+
+    auto duration = chrono::duration_cast<chrono::microseconds>(stop - start);
+
+    checkArray(array, length);
+
+    //outputting time
+    cout << "Bubble Sorted " << length << " elements in ";
+    cout << duration.count();
+    cout << " ms" << endl;
+    return  duration;
 }
 
+
+auto Sorter::selectionTime(int* array, int length){
+    auto start = chrono::high_resolution_clock::now();
+
+    selection(array, length);
+
+    auto stop = chrono::high_resolution_clock::now();
+
+
+
+    auto duration = chrono::duration_cast<chrono::microseconds>(stop - start);
+
+    checkArray(array, length);
+
+    //outputting time
+    cout << "selectionTime Sorted " << length << " elements in ";
+    cout << duration.count();
+    cout << " ms" << endl;
+    return  duration;
+}
+
+auto Sorter::insertionTime(int* array, int length){
+    auto start = chrono::high_resolution_clock::now();
+
+    insertion(array, length);
+
+    auto stop = chrono::high_resolution_clock::now();
+
+
+
+    auto duration = chrono::duration_cast<chrono::microseconds>(stop - start);
+
+    checkArray(array, length);
+
+    //outputting time
+    cout << "Bubble Sorted " << length << " elements in ";
+    cout << duration.count();
+    cout << " ms" << endl;
+    return  duration;
+}
+*/
 void Sorter::outputArray(int * array, int length){
 
   cout << "[" << *(array);
